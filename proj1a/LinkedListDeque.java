@@ -80,7 +80,7 @@ public class LinkedListDeque<T> {
         if (index > size) {
             return null;
         }
-        Node curr = sentinel;
+        Node curr = sentinel.next;
         while (index > 0) {
             curr = curr.next;
             index -= 1;
@@ -90,7 +90,7 @@ public class LinkedListDeque<T> {
 
     /** Same as get, but uses recursion. */
     public T getRecursive(int index) {
-        return getRecursiveHelper(sentinel, index);
+        return getRecursiveHelper(sentinel.next, index);
     }
 
     private T getRecursiveHelper(Node curr, int index) {
