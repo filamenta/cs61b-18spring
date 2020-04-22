@@ -50,11 +50,12 @@ public class ArrayDeque<T> {
     }
 
     private void resizeHelper(int resize) {
+        int tempSize = size;
         T[] temp = items;
         items = (T[]) new Object[resize];
         int newBeginPoint = 0;
         int newEndPoint = 0;
-        for (int i = beginPoint, flag = 0; flag != temp.length; i = plus(i, temp.length), flag++) {
+        for (int i = beginPoint, flag = 0; flag != tempSize; i = plus(i, temp.length), flag++) {
             items[newEndPoint] = temp[i];
             newEndPoint++;
         }
