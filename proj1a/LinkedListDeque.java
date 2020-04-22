@@ -4,7 +4,7 @@ public class LinkedListDeque<T> {
         Node next;
         T item;
 
-        public Node(Node p, T i, Node n) {
+        Node(Node p, T i, Node n) {
             item = i;
             prev = p;
             next = n;
@@ -26,14 +26,14 @@ public class LinkedListDeque<T> {
         temp.prev = sentinel.next;
         size += 1;
     }
-    public void addLast(T i){
+    public void addLast(T i) {
         Node temp = sentinel.prev;
         sentinel.prev = new Node(temp, i, sentinel);
         temp.next = sentinel.prev;
         size += 1;
     }
-    public boolean isEmpty(){
-        return size==0;
+    public boolean isEmpty() {
+        return size == 0;
     }
     /**size take constant time*/
     public int size() {
@@ -41,7 +41,7 @@ public class LinkedListDeque<T> {
     }
     public void printDeque() {
         int i = 0;
-        while (i < size){
+        while (i < size) {
             sentinel = sentinel.next;
             System.out.print(sentinel.item);
             System.out.print(" ");
